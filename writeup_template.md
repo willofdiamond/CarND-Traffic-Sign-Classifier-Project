@@ -17,14 +17,15 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/train_class_spread.png "train spread"
-[image2]: ./examples/valid_class_spread.png "valid spread"
-[image3]: ./examples/test_class_spread.png "test spread"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image1]: ./examples/train_class_spread.PNG "train spread"
+[image2]: ./examples/valid_class_spread.PNG "valid spread"
+[image3]: ./examples/test_class_spread.PNG "test spread"
+[image4]: ./examples/new_train.PNG "Traffic Sign 1"
+[image5]: ./examples/new_train2.PNG "Traffic Sign 2"
+[image6]: ./examples/new_train3.PNG "Traffic Sign 3"
+[image7]: ./examples/new_train4.PNG "Traffic Sign 4"
+[image8]: ./examples/new_train5.PNG "Traffic Sign 5"
+[image9]: ./examples/new_train6.PNG "Traffic Sign 6"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
