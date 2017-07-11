@@ -55,9 +55,7 @@ I had used pandas library to extract signal names from CSV file
 
 Here is an exploratory visualization of the data set. I had attached a histogram of the spread of classes in a histogram for train, valisation and test set.
 
-![alt text][image1]
-![alt text][image2]
-![alt text][image3]
+![Train spread][image1] | ![Valid spread][image2] | ![Test spread][image3]
 
 It can be observed that the distribution of the train, validation and test set is similar. 
 All the 43 Classes does not have a uniform distribution in the data set.
