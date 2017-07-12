@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: (https://github.com/willofdiamond/CarND-Traffic-Sign-Classifier-Project/blob/master/examples/train_class_spread.PNG| width=400)
+[image1]: (https://github.com/willofdiamond/CarND-Traffic-Sign-Classifier-Project/blob/master/examples/train_class_spread.PNG)
 [image2]: ./examples/valid_class_spread.PNG "valid spread"
 [image3]: ./examples/test_class_spread.PNG "test spread"
 [image4]: ./examples/new_train.PNG "Traffic Sign 1"
