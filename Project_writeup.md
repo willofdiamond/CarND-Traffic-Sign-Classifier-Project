@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: (https://github.com/willofdiamond/CarND-Traffic-Sign-Classifier-Project/blob/master/examples/train_class_spread.PNG)
+[image1]: ./examples/train_class_spread.PNG "train spread"
 [image2]: ./examples/valid_class_spread.PNG "valid spread"
 [image3]: ./examples/test_class_spread.PNG "test spread"
 [image4]: ./examples/new_train.PNG "Traffic Sign 1"
@@ -126,7 +126,7 @@ If an iterative approach was chosen:
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web and resized to 32x32x3:
+Here are five German traffic signs that I found on the web and resized to 32x32x3: This images after resizing mostly seems comparable to there original images but Slippery Road image seems very close to road work symbol. I belive this will be a hard classification while the other images should be easy to classify.
 
 ![Test image 1][image4] ![Test image 2][image5] !Test image 3][image6]
 ![Test image 4][image7] ![Test image 5][image8] ![Test image 6][image9]
@@ -136,14 +136,19 @@ Here are five German traffic signs that I found on the web and resized to 32x32x
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					|
-|:---------------------:|:---------------------------------------------:|
-| Speed limit (60km/h)      		| Speed limit (30km/h)  									|
-| ahead     			| ahead										|
-| right turn					| right turn											|
-| road work	      		| road work					 				|
-| 	Slippery Road	|    road work   							|
-| Stop sign		| stop sign      							|
+| Image			        |     Prediction	        					| Top 5 class probability | Top 5 classes prediction|
+|:---------------------:|:---------------------------------------------:|:---------------------------------------------:|:---------------------------------------------:|
+| Speed limit (60km/h)      		| Speed limit (30km/h)  	| [ 4.31484413 , 4.20215559 , 3.93806553 , 0.37723327 , -0.05186038]	| [24 25 39 26 29]|
+| ahead     			| ahead										|   [ 27.41308403, 8.83491993 ,7.0429492 , 5.10113192 ,3.77874708]  | [35 25 12 13 34 ]   |
+| right turn					| right turn			|		[ 22.00523758,5.7643981 , 5.35508299 , 2.42953634 ,1.31944633]	  |  [33  1 40 39 12 ]     |
+| road work	      		| road work				|	 	[ 29.89326286,11.70449066 ,7.66443634,7.31895161,6.99553871]			|    [25 22 29 24 26 ]  |
+| 	Slippery Road	|    road work   		|			[ 24.53626823,24.43817139 ,14.90817451,13.15715981,10.99170017]		|  [25 24 29 30 26 ]  |      |
+| Stop sign		| stop sign      			|		[ 9.47751427 , 6.03662443 , 5.21325874 , 2.6984241 , 2.11453795 , 1.47699785]		|     [14 15 13  9 36 33] |
 
 
-The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66%. This varies with the test set accuracy of 92. But  probability score of  predicted Speed limit (60km/h)  and  Speed limit (30km/h) are very close.
+
+The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66%. This varies with the test set accuracy of 92. But  probability score of  predicted Speed limit (60km/h) (25) and  Speed limit (30km/h) (24) are very close.  Ahead, Right turn and stop sign images has high classification probability compared to other classes. Slippery road is missclassifed as road work image and it is not properly recognized even in the top 5 classes.
+
+
+
+
