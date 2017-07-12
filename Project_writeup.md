@@ -128,7 +128,7 @@ If an iterative approach was chosen:
 
 Here are five German traffic signs that I found on the web and resized to 32x32x3: This images after resizing mostly seems comparable to there original images but Slippery Road image seems very close to road work symbol. I belive this will be a hard classification while the other images should be easy to classify.
 
-![Test image 1][image4] ![Test image 2][image5] !Test image 3][image6]
+![Test image 1][image4] ![Test image 2][image5] ![Test image 3][image6]
 ![Test image 4][image7] ![Test image 5][image8] ![Test image 6][image9]
 
 
