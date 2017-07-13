@@ -43,7 +43,7 @@ You're reading it! and here is a link to my [project code](https://github.com/wi
 
 ####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-I used the numpy library to calculate summary statistics of the traffic
+I used the Numpy library to calculate summary statistics of the traffic
 signs data set:
 
 * The size of training set is 34799
@@ -136,19 +136,13 @@ Here are the results of the prediction with grey scale images.
 
 | Image			        |     Prediction	        					| Top 5 class probability | Top 5 classes prediction|
 |:---------------------:|:---------------------------------------------:|:---------------------------------------------:|:---------------------------------------------:|
-| Speed limit (60km/h)      		| Speed limit (60km/h)  	| [  9.94940996e-01   4.70735831e-03   1.57816874e-04   8.65524999e-05
-   8.33368831e-05]	| [ 3  2 16  9  5]|
-| ahead     			| ahead										|   [  1.00000000e+00   1.58982274e-16   1.59065669e-20   1.27800665e-20
-   1.06318447e-21]  | [35 33  9 34 37 ]   |
-| right turn					| right turn			|		[ [  1.00000000e+00   1.50360003e-14   8.40688247e-16   4.85597361e-19
-   2.64132421e-20]	  |  [33 40 39 34 38]     |
-| road work	      		| road work				|	 	[  1.00000000e+00   1.70044737e-30   0.00000000e+00   0.00000000e+00
-   0.00000000e+00]			|    [[25 29  0  1  2 ]  |
-| 	Slippery Road	|    Slippery Road   		|			[  9.99842644e-01   1.40188931e-04   9.14557313e-06   5.83448582e-06
-   1.66681025e-06]		|  [23 29 31 25 19]  |      |
-| Stop sign		| stop sign      			|		[  1.00000000e+00   2.45443050e-17   2.21973190e-22   1.35187295e-22
-   1.32074324e-22]		|     [14 15  3 17 13] |
+| Speed limit (60km/h)      		| Speed limit (60km/h)  	| [  9.94940996e-01   4.70735831e-03   1.57816874e-04   8.65524999e-05 8.33368831e-05]	| [ 3  2 16  9  5]|
+| ahead     			| ahead										|   [  1.00000000e+00   1.58982274e-16   1.59065669e-20   1.27800665e-20 1.06318447e-21]  | [35 33  9 34 37 ]   |
+| right turn					| right turn			|		[ [  1.00000000e+00   1.50360003e-14   8.40688247e-16   4.85597361e-19 2.64132421e-20]	  |  [33 40 39 34 38]     |
+| road work	      		| road work				|	 	[  1.00000000e+00   1.70044737e-30   0.00000000e+00   0.00000000e+00 0.00000000e+00]			|    [[25 29  0  1  2 ]  |
+| 	Slippery Road	|    Slippery Road   		|			[  9.99842644e-01   1.40188931e-04   9.14557313e-06   5.83448582e-06 1.66681025e-06]		|  [23 29 31 25 19]  |      |
+| Stop sign		| stop sign      			|		[  1.00000000e+00   2.45443050e-17   2.21973190e-22   1.35187295e-22 1.32074324e-22]		|     [14 15  3 17 13] |
 
 
 
-My model was able to correctly guess 6 of the 6 traffic signs, which gives an accuracy of 100%. This is impressive considering the images has less resolution and signs like road work and slippery road are similar.
+My model was able to correctly guess all the six traffic signs, which gives an accuracy of 100%. This is impressive considering the images has less resolution and signs like road work and slippery road are similar.
