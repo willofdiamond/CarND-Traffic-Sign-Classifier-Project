@@ -43,7 +43,7 @@ You're reading it! and here is a link to my [project code](https://github.com/wi
 
 ####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-I used the numpy  library to calculate summary statistics of the traffic
+I used the numpy library to calculate summary statistics of the traffic
 signs data set:
 
 * The size of training set is 34799
@@ -67,14 +67,10 @@ All the 43 Classes does not have a uniform distribution in the data set.
 
 #### Steps in preprocessing
 
-1. As a first step, I decided to convert the images to grayscale because RGB channels are sensitive to light changes. Converting to other color spaces can be effective as well.
-2. I had normalized the images to get all features on the same scale
+1. As a first step, I converted the images to grayscale because RGB channels are sensitive to lighting conditions. When compared the results of grey channel images with RGB channels, RGB channels tend to give much better results proving that color information also plays a vital role in classification. This made me choose RGB channel images as my input. Exploring other color spaces may result in better results.
+2. I had normalized the images to get all features on the same scale.
 
 
-
-Here is an example of a traffic sign image before and after greyScale.
-
-![RGB Test Image][image10] | ![Normalized grey Test Image][image11]
 
 
 #### Model Architecture
@@ -83,7 +79,7 @@ My final model consisted of the following layers:
 
 | Layer         		|     Description	        					|
 |:---------------------:|:---------------------------------------------:|
-| Input         		| 32x32x1 Grey image   							|
+| Input         		| 32x32x3 RGB image   							|
 | Convolution 5x5x6     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
@@ -104,29 +100,31 @@ My final model consisted of the following layers:
 
 
 #### 3. Model Parameters
-For training my model, I used 10 epochs, batch size of 250 and drop out of 0.8.
+For training my model, I used 10 epochs, batch size of 300 ,learning rate of 0.005 and drop out of 0.8.
 
 
 
 #### 4. Results
+If an iterative approach was chosen:
+* Initially I converted RGB images in to grey scale image and normalized it to zero mean and unit standard deviation image. But RGB images tend give better results for same tuned parameters. So I sticked with RGB channels as input.
+* My architecture was based on LeNet.As LeNet was designed for digit classification and most of the Traffic signs have digits I believe this is the best architecture to start.
+* I had adjusted Batch size, dropout and epoch parameters to get a validation accuracy of 0.94 along with preprocessing.
+
+
 
 My final model results were:
-* training set accuracy of 0.989
-* validation set accuracy of 0.933
-* test set accuracy of 0.923
+* training set accuracy of 0.992
+* validation set accuracy of 0.94
+* test set accuracy of 0.933
 
-If an iterative approach was chosen:
-* I had initially tried to feed RGB image and the with Lenet architecture and the results are terrible.
-* Later I had prepossessed the RGB images to a grey scale image
-* I initially started with Lenet model and then adjust the parameter till satisfied results are obtained
-* I had changed convolution layer windows, dropout and max pooling parameters
+
 
 
 ### Test a Model on New Images
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web and resized to 32x32x3: This images after resizing mostly seems comparable to there original images but Slippery Road image seems very close to road work symbol. I belive this will be a hard classification while the other images should be easy to classify.
+Here are five German traffic signs that I found on the web and resized to 32x32x3: This images after resizing mostly seems comparable to there original images but Slippery Road image seems very close to road work symbol. I believe this will be a hard classification while the other images should be easy to classify.
 
 ![Test image 1][image4] ![Test image 2][image5] ![Test image 3][image6]
 ![Test image 4][image7] ![Test image 5][image8] ![Test image 6][image9]
@@ -134,21 +132,23 @@ Here are five German traffic signs that I found on the web and resized to 32x32x
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
-Here are the results of the prediction:
+Here are the results of the prediction with grey scale images.
 
 | Image			        |     Prediction	        					| Top 5 class probability | Top 5 classes prediction|
 |:---------------------:|:---------------------------------------------:|:---------------------------------------------:|:---------------------------------------------:|
-| Speed limit (60km/h)      		| Speed limit (30km/h)  	| [ 4.31484413 , 4.20215559 , 3.93806553 , 0.37723327 , -0.05186038]	| [24 25 39 26 29]|
-| ahead     			| ahead										|   [ 27.41308403, 8.83491993 ,7.0429492 , 5.10113192 ,3.77874708]  | [35 25 12 13 34 ]   |
-| right turn					| right turn			|		[ 22.00523758,5.7643981 , 5.35508299 , 2.42953634 ,1.31944633]	  |  [33  1 40 39 12 ]     |
-| road work	      		| road work				|	 	[ 29.89326286,11.70449066 ,7.66443634,7.31895161,6.99553871]			|    [25 22 29 24 26 ]  |
-| 	Slippery Road	|    road work   		|			[ 24.53626823,24.43817139 ,14.90817451,13.15715981,10.99170017]		|  [25 24 29 30 26 ]  |      |
-| Stop sign		| stop sign      			|		[ 9.47751427 , 6.03662443 , 5.21325874 , 2.6984241 , 2.11453795 , 1.47699785]		|     [14 15 13  9 36 33] |
+| Speed limit (60km/h)      		| Speed limit (60km/h)  	| [  9.94940996e-01   4.70735831e-03   1.57816874e-04   8.65524999e-05
+   8.33368831e-05]	| [ 3  2 16  9  5]|
+| ahead     			| ahead										|   [  1.00000000e+00   1.58982274e-16   1.59065669e-20   1.27800665e-20
+   1.06318447e-21]  | [35 33  9 34 37 ]   |
+| right turn					| right turn			|		[ [  1.00000000e+00   1.50360003e-14   8.40688247e-16   4.85597361e-19
+   2.64132421e-20]	  |  [33 40 39 34 38]     |
+| road work	      		| road work				|	 	[  1.00000000e+00   1.70044737e-30   0.00000000e+00   0.00000000e+00
+   0.00000000e+00]			|    [[25 29  0  1  2 ]  |
+| 	Slippery Road	|    Slippery Road   		|			[  9.99842644e-01   1.40188931e-04   9.14557313e-06   5.83448582e-06
+   1.66681025e-06]		|  [23 29 31 25 19]  |      |
+| Stop sign		| stop sign      			|		[  1.00000000e+00   2.45443050e-17   2.21973190e-22   1.35187295e-22
+   1.32074324e-22]		|     [14 15  3 17 13] |
 
 
 
-The model was able to correctly guess 4 of the 6 traffic signs, which gives an accuracy of 66%. This varies with the test set accuracy of 92. But  probability score of  predicted Speed limit (60km/h) (25) and  Speed limit (30km/h) (24) are very close.  Ahead, Right turn and stop sign images has high classification probability compared to other classes. Slippery road is missclassifed as road work image and it is not properly recognized even in the top 5 classes.
-
-
-
-
+My model was able to correctly guess 6 of the 6 traffic signs, which gives an accuracy of 100%. This is impressive considering the images has less resolution and signs like road work and slippery road are similar.
